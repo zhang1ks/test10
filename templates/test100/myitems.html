@@ -1,0 +1,17 @@
+{% extends 'test100/base.html' %}
+{% block body_block %}
+    {% if message %} {# check if there is any error occurs first #}
+        {{ message }} {# show error information  #}
+{% elif myitem  %}
+    <h2>Items checked out by {{ user.first_name }}</h2>
+    <ol>
+        {% for item in myitem %}
+            <li>{{ item.get_itemtype_display}}:  {{ item }}</li> {# format: itemtype:title  #}
+        {% endfor %}
+    </ol>
+
+{% else %} {# when the user does not borrow any item from libray #}
+    <strong>There is no available items!</strong>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'test100/base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+    {% if item.itemtype == 'Book' %}
+        <h3>This is Book item</h3>
+            Title: {{ item.title }}<br/>
+            Published Year: {{ item.pubyr }}<br/>
+            Author: {{ item.author }}<br/>
+            Category: {{ item.get_category_display }}<br>
+{#        {{ item.barcode }}<br/>#}
+
+    {%  else %}
+    <h3>This is DVD item</h3>
+            Title: {{ item.title }}<br/>
+            Published Year: {{ item.pubyr}}<br/>
+            Maker: {{ item.maker }}<br/>
+            Duration: {{ item.duration }}<br/>
+            Rating:{{ item.get_rating_display }}<br/>
+
+    {% endif %}
+    <img height="90px" width="160px" src={% static bar_url %} , alt="ean8" />
+{% endblock %}
+
+

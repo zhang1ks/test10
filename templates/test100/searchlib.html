@@ -1,0 +1,10 @@
+{% extends 'test100/base.html' %}
+{% block body_block %}
+<h1>Search in Library</h1>
+<form action="/test100/result" method="get">
+   Title Search:<input type="text" name="title"> {# key words for a book or a dvd title #}
+   Author Search:<input type="text" name="author">  {# key words for a book author #}
+    Maker Search:<input type="text" name="maker"> {# key words for a dvd maker #}
+   <p><input type="submit" value="Search"></p>
+</form>
+{% endblock %}

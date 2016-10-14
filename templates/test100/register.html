@@ -1,0 +1,9 @@
+{% extends 'test100/base.html' %}
+{% block body_block %}
+<form action="" method="post"> {# transfer RegisterForm #}
+    {% csrf_token %}
+    {{ form.as_p }} {# show as paragraph #}
+    <input type="submit" value="Submit" />
+</form>
+
+{% endblock %}

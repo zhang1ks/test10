@@ -1,0 +1,14 @@
+{% extends 'test100/base.html' %}
+{% block body_block %}
+    {% if message %} {# check if any error message sent by result view first #}
+        {{ message }} {# show error message if one appears #}
+    {% else %} {# show search information #}
+        <p>Your searched for title: '{{ title }}'</p>
+        <p>Your searched books writtern by author: '{{ author }}'</p>
+        <p>Your searched DVDs published by maker: '{{ maker }}'</p>
+        <p>Search Result</p>
+        {% for item in items %} {#  show results #}
+             <p>{{ item.itemtype }}:{{ item.title }}    {{ item.maker }}{{ item.author }}</p>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

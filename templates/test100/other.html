@@ -1,0 +1,15 @@
+{% extends 'test100/base.html' %}
+{% block body_block %}
+    <h2>List of Other Library Items</h2>
+{% if otherlist %} {# get other item list #}
+    <ol>
+    {% for other in otherlist %}
+    <li><a href="/test100/{{ other.id }}"> {{ other }}</a></li> {# crate a link for showing item detail information #}
+    {% endfor %}
+    </ol>
+{% else %} {# when the list is empty #}
+    <strong>There is no other items in Library!</strong>
+{% endif %}
+
+
+{% endblock %}

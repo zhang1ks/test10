@@ -1,0 +1,15 @@
+{% extends 'test100/base.html' %} {#base background#}
+{% block body_block %}
+{% if itemlist %} {# get list form  suggestions view #}
+    <h2>List of Suggestion items for purchasing</h2>
+    <ol>
+        {% for item in itemlist %}
+            <li><a href="/test100/suggestdetail/{{ item.id}}">{{ item.get_type_display}}:  {{ item}} </a></li> {# create links for detail information and redirect to suggestdetial page  #}
+        {% endfor %}
+    </ol>
+
+{% else %}
+    <strong>There are no available items!</strong> {# no suggestion item was found #}
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="d0f17f7a-2197-4e77-802e-9a56204bdb32" name="libsite.comxa.com" url="http://libsite.comxa.com">
+        <fileTransfer host="libsite.comxa.com" port="21" password="dfc4dfc3dfd9dfdedfcfdfc6dfd8dfc5dfc5dfd3df9b" username="a3491349">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

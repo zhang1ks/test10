@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+    <script>
+        //initialize WOW for element animation
+        new WOW().init()
+    </script>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>My Library APP</title>
+</head>
+
+<body>
+<hr>
+            <section id="activities" class="row activity-section">
+
+                <div class="activity-element col-md-4 wow flip">
+		            <a href ={% url 'test100:book' %} style="outline:none"> <img src={% static "images/books-icon.png" %} alt="book">
+                        <p>Books</p>
+                    </a>
+                </div>
+                <div class="activity-element col-md-4 wow flip">
+		            <a href ={% url 'test100:dvd' %} style="outline:none"> <img src={% static "images/dvd-icon.png" %} alt="dvd">
+                        <p> DVDs </p>
+		            </a>
+                </div>
+                <div class="activity-element col-md-4 wow flip">
+                    <a href ={% url 'test100:other' %} style="outline:none"> <img src={% static "images/item-icon.png" %} alt="item">
+                        <p>Other Items</p>
+                    </a>
+                </div>
+            </section>
+    </div>
+    <hr>
+    {# user's lucky number #}
+    {% ifnotequal request.session.luckynum None %}
+        <h4>Lucky Number: {{ request.session.luckynum }}</h4>
+    {% else %}
+        <h4>Lucky Number: 0</h4>
+    {% endifnotequal %}
+</body>
+</html>

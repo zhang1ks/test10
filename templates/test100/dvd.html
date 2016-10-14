@@ -1,0 +1,15 @@
+{% extends 'test100/base.html' %}
+{% block body_block %}
+    <h2>List of Library DVDs</h2>
+{% if dvdlist %}
+    <ol>
+    {% for dvd in dvdlist %}
+    <li><a href="/test100/{{ dvd.id }}"> {{ dvd }}</a></li>
+    {% endfor %}
+    </ol>
+{% else %}
+    <strong>There is no DVD in library!</strong>
+{% endif %}
+
+
+{% endblock %}
